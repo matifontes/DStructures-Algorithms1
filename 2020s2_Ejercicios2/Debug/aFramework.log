@@ -1,0 +1,4 @@
+﻿  EjerciciosComienzo.cpp
+E:\ORT\Algoritmos 1\2020s2_Ejercicios2\2020s2_Ejercicios2\EjerciciosComienzo.cpp(10,24): warning C4018: '<=': no coinciden signed/unsigned
+E:\ORT\Algoritmos 1\2020s2_Ejercicios2\2020s2_Ejercicios2\EjerciciosComienzo.cpp(13,9): warning C4018: '<': no coinciden signed/unsigned
+  aFramework.vcxproj -> E:\ORT\Algoritmos 1\2020s2_Ejercicios2\2020s2_Ejercicios2\Debug\aFramework.exe
