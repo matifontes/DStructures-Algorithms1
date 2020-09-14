@@ -33,14 +33,33 @@ bool posibleTriangulo() {
 
 /* ----------------------------------------------------------------------------------- */
 
-int misterio1(char* p) {
+int strlen(char* p) {
 	char* t = p;
 	while (*t != '\0')
 		t++;
 	return t - p;
 }
 
-int misterio(char* s, char* t) {
+
+//1) asignacion y = *d = *o
+//2) evalua (*d) -> da false cuando encuentra '/0'
+//3) incremeto de d y o
+
+//PRE: Recibe un string o y un puntero d
+//POS: Copia el string o al destino d que apunta a 
+//		strlen(o)+1 caracteres reservados
+void strcpy(char* d, char* o) {
+	while (*d++ = *o++);
+}
+
+
+// EQUIVALENTES: *vec / vec[0]
+//PRE:
+//POS:  Si son iguales retorna 0
+//		Si s < t retorna <0; 
+//		Si s > t retorna > 0; 
+//		COMPARA CARACTERES SEGUN SU POSICION EN LA TABLA ASCII (AZ < Aa)
+int strcmp(char* s, char* t) {
 	int i;
 
 	for (int i = 0; s[i] == t[i]; i++)
@@ -51,8 +70,15 @@ int misterio(char* s, char* t) {
 
 // string: puntero al primer caracter de una serie de
 // caracteres consecutivos en memoria terminados por 
-// el caracter '\0'
+// el caracter '\0
+
+
 /* ----------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------- */
+
+/* ----------------------------------------------------------------------------------- */
+
 int main(){
 	if (posibleTriangulo()) {
 		cout << "true";
