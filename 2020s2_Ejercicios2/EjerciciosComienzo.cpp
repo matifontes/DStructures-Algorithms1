@@ -94,14 +94,49 @@ int maximoNumero(unsigned int n) {
 }
 
 void ordenarVecInt(int *vec, int largoVec) {
-	// IMPLEMENTAR SOLUCION
+	int aux = 0;
+	for (int i = 0; i < largoVec-1; i++) {
+		for (int j = i+1; j < largoVec; j++) {
+			if (vec[i] > vec[j]) {
+				aux = vec[i];
+				vec[i] = vec[j];
+				vec[j] = aux;
+			}
+		}
+	}
 }
 
 
-char* invertirCase(char* palabra)
-{
+//Funcion auxiliar para saber el largo;
+unsigned int largo(char* palabra) {
+	int count = 0;
+	for (int i = 0; palabra[i] != 0; i++) {
+		count++;
+	}
+	return count;
+}
+
+char* invertirCase(char* palabra){
 	// IMPLEMENTAR SOLUCION
-	return NULL;
+	//A + (a-A) = a;
+
+	char* nueva = new char[largo(palabra)+1];
+	
+	int i = 0;
+	while (palabra[i]!=0){
+		if (palabra[i] <= 'Z' && palabra[i] >= 'A') {
+			nueva[i] = (palabra[i] + ('a' - 'A'));
+		}
+		else if (palabra[i] <= 'z' && palabra[i] >= 'a') {
+			nueva[i] = (palabra[i] - ('a'- 'A'));
+		}
+		else {
+			nueva[i] = palabra[i];
+		}
+		++i;
+	}
+	nueva[i] = '\0';
+	return nueva;
 }
 
 int islas(char** mapa, int col, int fil){
@@ -109,10 +144,39 @@ int islas(char** mapa, int col, int fil){
     return 0;
 }
 
+bool verificarOcurrencia(char* original, char* buscada, int index, int lBuscada) {
+	for (int i = 0; i < lBuscada; i++) {
+		if (original[index + i] != buscada[i]) {
+			return false;
+		}
+	}
+	return true;
+}
+
+bool auxOcurrencias(char* original, char* buscada) {
+	bool aux = true;
+	int lOriginal = largo(original);
+	int lBuscada = largo(buscada);
+	bool res = false;
+	for (int i = 0; i <= lOriginal - lBuscada && !res; i++) {
+		if (original[i] == buscada[0]) {
+			res = verificarOcurrencia(original, buscada, i, lBuscada);
+		}
+	}
+	return res;
+}
+
 unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
 {
-	// IMPLEMENTAR SOLUCION
-    return 0;
+	unsigned int res = 0;
+	for (int i = 0; i < largoVecStr; i++) {
+		if (largo(vecStr[i]) >= largo(substr)) {
+			if (auxOcurrencias(vecStr[i], substr)) {
+				res++;
+			}
+		}
+	}
+    return res;
 }
 
 char **ordenarVecStrings(char **vecStr, int largoVecStr)
