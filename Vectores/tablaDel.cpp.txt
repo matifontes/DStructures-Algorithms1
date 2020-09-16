@@ -1,0 +1,10 @@
+void tablaDel(unsigned int tablaDel, unsigned int desde, unsigned int hasta) {
+	int res = 0;
+	for (int i = desde; i <= hasta; i++) {
+		res=i*tablaDel;
+		cout << i << "*" << tablaDel << "=" << res;
+		if (i < hasta) {
+			cout << ";";
+		}
+	}
+}
