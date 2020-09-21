@@ -107,7 +107,6 @@ void ordenarVecInt(int *vec, int largoVec) {
 }
 
 
-//Funcion auxiliar para saber el largo;
 unsigned int largo(char* palabra) {
 	int count = 0;
 	for (int i = 0; palabra[i] != 0; i++) {
@@ -166,11 +165,11 @@ bool auxOcurrencias(char* original, char* buscada) {
 	return res;
 }
 
-unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
-{
+unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr) {
 	unsigned int res = 0;
+	int lSubStr = largo(substr);
 	for (int i = 0; i < largoVecStr; i++) {
-		if (largo(vecStr[i]) >= largo(substr)) {
+		if (largo(vecStr[i]) >= lSubStr) {
 			if (auxOcurrencias(vecStr[i], substr)) {
 				res++;
 			}
@@ -179,15 +178,125 @@ unsigned int ocurrenciasSubstring(char **vecStr, int largoVecStr, char *substr)
     return res;
 }
 
-char **ordenarVecStrings(char **vecStr, int largoVecStr)
-{
-	// IMPLEMENTAR SOLUCION
-    return NULL;
+
+int menor(int numero1, int numero2) {
+	int res = 0;
+	if (numero1 < numero2) {
+		res = numero1;
+	}
+	else {
+		res = numero2;
+	}
+
+	return res;
 }
 
+bool stringMenorIgual(char* vecVerificar, char* vecOriginal) {  ///T
+	bool res = true;
+	int lVecVerificar = largo(vecVerificar);
+	int lVecOriginal = largo(vecOriginal);
+	int menorLargo = menor(lVecVerificar, lVecOriginal);
+	for (int i = 0; i < menorLargo; i++) {
+		if (vecVerificar[i] < vecOriginal[i]) {
+			return true;
+		}
+		else if (vecVerificar[i] > vecOriginal[i]) {
+			return false;
+		}
+	}
+	return lVecVerificar <= lVecOriginal;
+}
+
+void inicializarVector(bool* vecAux, int largoVec) {
+	for (int i = 0; i < largoVec; i++) {
+		vecAux[i] = false;
+	}
+}
+
+
+char* crearPalabra(char* palabra) {
+	int lPalabra = largo(palabra);
+	char* nuevo = new char[lPalabra + 1];
+	for (int i = 0; i < lPalabra; i++) {
+		nuevo[i] = palabra[i];
+	}
+	nuevo[lPalabra] = '\0';
+	return nuevo;
+}
+
+char* maxString(char** vecStr, int largoVecStr) {
+	char* max = vecStr[0];
+	for (int i = 0; i < largoVecStr; i++) {
+		if (stringMenorIgual(max, vecStr[i])) {
+			max = vecStr[i];
+		}
+	}
+	return max;
+}
+
+char **ordenarVecStrings(char **vecStr, int largoVecStr) {
+	bool* vecAux = new bool[largoVecStr];
+	inicializarVector(vecAux, largoVecStr);
+	char** vecRes = new char*[largoVecStr+1];
+	int minIndex = 0;
+
+	char* max = maxString(vecStr, largoVecStr);
+
+	for (int i = 0; i < largoVecStr; i++) {
+		char* min = max;
+		for (int j = 0; j < largoVecStr; j++) {
+			if(!vecAux[j]){
+				if (stringMenorIgual(vecStr[j], min)) {
+					minIndex = j;
+					min = vecStr[j];
+				}
+			}
+		}
+		vecAux[minIndex] = true;
+		char* nuevo = crearPalabra(min);
+		vecRes[i] = nuevo;
+	}
+
+	delete[] vecAux;
+	return vecRes;
+}
+
+
 int* intercalarVector(int* v1, int* v2, int l1, int l2){
-	// IMPLEMENTAR SOLUCION
-	return NULL;
+	int indiceV1 = 0;
+	int indiceV2 = 0;
+	int lTotal = l1 + l2;
+	
+	if (l1 == 0 && l2 == 0) {
+		return NULL;
+	}else{
+		int* vecRes = new int[lTotal];
+		for (int i = 0; i < lTotal; i++) {
+			if (indiceV1 < l1 && indiceV2 < l2 && v1[indiceV1] <= v2[indiceV2]) {
+				int nuevo = v1[indiceV1];
+				vecRes[i] = nuevo;
+				indiceV1++;
+			}
+			else if (indiceV1 < l1 && indiceV2 < l2 && v1[indiceV1] > v2[indiceV2]) {
+				int nuevo = v2[indiceV2];
+				vecRes[i] = nuevo;
+				indiceV2++;
+			}
+			else if (indiceV1 >= l1 && indiceV2 < l2) {
+				int nuevo = v2[indiceV2];
+				vecRes[i] = nuevo;
+				indiceV2++;
+			}
+			else if (indiceV2 >= l2 && indiceV1 < l1) {
+				int nuevo = v1[indiceV1];
+				vecRes[i] = nuevo;
+				indiceV1++;
+			}
+		}
+
+		return vecRes;
+	}
+	
 }
 
 bool subconjuntoVector(int* v1, int* v2, int l1, int l2)
