@@ -1,3 +1,13 @@
+//PRE: Recibe un nodo
+//POS: Crea una copia de ese nodo y la devuelve sin compartir memoria
+NodoLista* copiaNodo(NodoLista* l) {
+	NodoLista* res = new NodoLista;
+	res->sig = NULL;
+	res->dato = l->dato;
+	return res;
+}
+
+
 //PRE: Recibe un nodo nuevo, y dos listas simplemente enlazadas.
 //POS: Se debe agregar el nodo nuevo a la lista res y en caso que sea el primer nodo de la lista res actualizar aux (que apunte a res)
 void insertarNodo(NodoLista* nuevo, NodoLista*& res, NodoLista*& aux) {
