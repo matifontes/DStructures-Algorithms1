@@ -11,3 +11,7 @@ void agregarAlInicio(NodoLista* nuevo, NodoLista*& res, NodoLista*& aux) {
 		res = nuevo;
 	}
 }
+
+
+
+
