@@ -1,6 +1,5 @@
 char* invertirCase(char* palabra){
-	// IMPLEMENTAR SOLUCION
-	//A + (a-A) = a;
+
 
 	char* nueva = new char[largo(palabra)+1];
 	
