@@ -38,8 +38,8 @@ void eliminarPosiciones(nodoLista * & L, int desde, int hasta) {
 		}
 }
 
-int nivelDeElemento(ArbGen A, int x){
-	if(A==NULL){
+int nivelDeElemento(ArbGen A, int x) {
+	if(A==NULL) {
 		return 0;
 	}
 	
