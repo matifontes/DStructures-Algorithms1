@@ -1,5 +1,5 @@
-nodoLista* posicion(nodoLista* L, int x){
-	if(L == NULL) return NULL;
+nodoLista* posicion(nodoLista* L, int x) {
+	if (L == NULL) return NULL;
 	
 	while(L){
 		if(L->dato == x) return L;
