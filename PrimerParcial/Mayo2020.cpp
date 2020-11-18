@@ -1,9 +1,9 @@
-void diferencia (lista& l1, lista l2){
+void diferencia (lista& l1, lista l2) {
 	lista ant = NULL;
 	lista recorrer = l1;
 	lista ppio = l1;
 	
-	if(l1 == NULL){
+	if(l1 == NULL) {
 		return NULL;
 	}
 	if(l2 == NULL){
