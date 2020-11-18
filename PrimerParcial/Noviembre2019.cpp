@@ -52,19 +52,19 @@ int nivelDeElemento(ArbGen A, int x) {
 	return 0;	
 }
 
-int auxFunc(int actual, int der){
+int auxFunc(int actual, int der) {
 		if(der== INT_MIN || actual>der){
 			return actual;
 		}
 		return der;
 }
 
-int piso(ABB a, int x){
+int piso(ABB a, int x) {
 	if(a == NULL) return INT_MIN;
 	
 	if(a->dato == x) return x;
 	
-	if(a->dato > x){
+	if(a->dato > x) {
 		return piso(a->izq,x);
 	}
 	else {
