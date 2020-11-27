@@ -2,7 +2,7 @@
 using namespace std;
 
 /*3) Escriba un algoritmo que lea tres valores reales positivos y determine si pueden ser las
-longitudes de los lados de un triángulo(considerar que la suma, al menos, de los cuadrados de
+longitudes de los lados de un triÃ¡ngulo(considerar que la suma, al menos, de los cuadrados de
 	dos de sus lados tiene que ser mayor igual al cuadrado del otro lado). */
 bool auxSuma(unsigned int l1, unsigned int l2, unsigned int l3) {
 	unsigned int l1Aux = l1 * l1;
@@ -41,9 +41,7 @@ int strlen(char* p) {
 }
 
 
-//1) asignacion y = *d = *o
-//2) evalua (*d) -> da false cuando encuentra '/0'
-//3) incremeto de d y o
+
 
 //PRE: Recibe un string o y un puntero d
 //POS: Copia el string o al destino d que apunta a 
