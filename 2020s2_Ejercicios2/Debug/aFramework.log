@@ -1,4 +1,0 @@
-﻿  EjerciciosArboles.cpp
-E:\ORT\Algoritmos 1\2020s2_Ejercicios2\2020s2_Ejercicios2\EjerciciosArboles.cpp(199,42): warning C4554: "&": compruebe la prioridad de operador para posibles errores; utilice paréntesis para indicar la prioridad
-E:\ORT\Algoritmos 1\2020s2_Ejercicios2\2020s2_Ejercicios2\EjerciciosArboles.cpp(126): warning C4715: 'enNivel': no todas las rutas de acceso de control devuelven un valor
-  aFramework.vcxproj -> E:\ORT\Algoritmos 1\2020s2_Ejercicios2\2020s2_Ejercicios2\Debug\aFramework.exe

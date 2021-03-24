@@ -1,0 +1,6 @@
+C:\Users\User\Desktop\2020s2_EjerciciosParte2\Debug\Ejercicios.txt
+C:\Users\User\Desktop\2020s2_EjerciciosParte2\Debug\aFramework.exe
+C:\Users\User\Desktop\2020s2_EjerciciosParte2\Debug\aFramework.pdb
+C:\Users\User\Desktop\EjerciciosParte2-MATIAS-FONTES-248142\Debug\Ejercicios.txt
+C:\Users\User\Desktop\EjerciciosParte2-MATIAS-FONTES-248142\Debug\aFramework.exe
+C:\Users\User\Desktop\EjerciciosParte2-MATIAS-FONTES-248142\Debug\aFramework.pdb

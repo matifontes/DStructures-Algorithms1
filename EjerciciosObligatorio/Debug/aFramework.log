@@ -1,0 +1,4 @@
+﻿  ColaPrioridadIntImp.cpp
+C:\Users\User\Desktop\EjerciciosParte2-MATIAS-FONTES-248142\ColaPrioridadIntImp.cpp(69): warning C4715: 'principio': no todas las rutas de acceso de control devuelven un valor
+C:\Users\User\Desktop\EjerciciosParte2-MATIAS-FONTES-248142\ColaPrioridadIntImp.cpp(75): warning C4715: 'principioPrioridad': no todas las rutas de acceso de control devuelven un valor
+  aFramework.vcxproj -> C:\Users\User\Desktop\EjerciciosParte2-MATIAS-FONTES-248142\Debug\aFramework.exe
