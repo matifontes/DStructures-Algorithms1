@@ -13,21 +13,21 @@ void eliminarPosiciones(nodoLista * & L, int desde, int hasta) {
 		nodoLista* auxRecorrer = L;
 		if (L!= NULL{
 			count= desde;
-			if(desde == 1){
-				while (L && count<= hasta){
+			if(desde == 1) {
+				while (L && count<= hasta) {
 					nodoLista* borrar = L;
 					L = L->sig;
 					delete borrar;
 					count++;
 				}
-			}else{
+			} else {
 				countAux =1;
-				while (L && countAux<desde-1){
+				while (L && countAux<desde-1) {
 					L= L->sig;
 				}
 				nodoLista* antDesde = L;
 				
-				while (L && countAux<=hasta){
+				while (L && countAux<=hasta) {
 					nodoLista* borrar = L;
 					antDesde->sig = L->sig;
 					L = L->sig;
