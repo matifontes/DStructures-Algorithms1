@@ -54,7 +54,7 @@ void strcpy(char* d, char* o) {
 // EQUIVALENTES: *vec / vec[0]
 //PRE:
 //POS:  Si son iguales retorna 0
-//		Si s < t retorna <0; 
+//		Si s < t retorna < 0; 
 //		Si s > t retorna > 0; 
 //		COMPARA CARACTERES SEGUN SU POSICION EN LA TABLA ASCII (AZ < Aa)
 int strcmp(char* s, char* t) {
@@ -77,7 +77,7 @@ int strcmp(char* s, char* t) {
 
 /* ----------------------------------------------------------------------------------- */
 
-int main(){
+int main() {
 	if (posibleTriangulo()) {
 		cout << "true";
 	}
